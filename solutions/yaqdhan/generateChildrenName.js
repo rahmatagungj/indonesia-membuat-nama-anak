@@ -7,10 +7,10 @@ function generateChildrenName(characters, name) {
     return arr.filter(x => x === item);
   }
 
-  const charactersAlphabets = letters(characters);
-  const nameAlphabets = letters(name);
+  const charactersLetters = letters(characters);
+  const nameLetters = letters(name);
 
-  return charactersAlphabets.every(x => itemFilter(charactersAlphabets, x).length === itemFilter(nameAlphabets, x).length)
+  return charactersLetters.every(x => itemFilter(charactersLetters, x).length === itemFilter(nameLetters, x).length)
 }
 
 // dont change the code below
