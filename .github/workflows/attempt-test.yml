@@ -13,5 +13,16 @@ jobs:
       uses: actions/setup-node@v1
       with: 
         node-version: 16.x
+    - name: Get changed files using defaults
+      id: changed-files
+      uses: tj-actions/changed-files@v17.3
+    - name: setup
+      run: |
+        for file in ${{ steps.changed-files-for-solutions.outputs.added_files }}; do
+          echo "$file was added"
+          if grep -q "$file" <<< "generateChildrenName.js"; then 
+            cp -f $file ./generateChildrenName.js
+          fi
+        done
     - name: run test suite
       run: node run
