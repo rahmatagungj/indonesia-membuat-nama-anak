@@ -1,5 +1,5 @@
 function generateChildrenName(characters, name) {
-  return name.split("").filter(x => characters.indexOf(x) === -1).join("") ? false : true;
+  // Write your code here
 }
 
 // dont change the code below
