@@ -19,7 +19,8 @@ jobs:
     - name: setup
       run: |
         file=${{ steps.changed-files.outputs.added_files }}
+        filename=${ $file##*/ }
         echo "$file was added"
-        cp -f "$file" ./generateChildrenName.js
+        cp -f "$file" "./$filename"
     - name: run test suite
       run: node run
