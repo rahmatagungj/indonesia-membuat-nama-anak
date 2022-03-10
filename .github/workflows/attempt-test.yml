@@ -18,8 +18,8 @@ jobs:
       uses: tj-actions/changed-files@v17.3
     - name: setup
       run: |
-        file=${{ steps.changed-files.outputs.added_files }}
-        echo "$file[0] was added"
-        cp -f "$file[0]" ./generateChildrenName.js
+        file=${{ steps.changed-files.outputs.added_files[0] }}
+        echo "$file was added"
+        cp -f "$file" ./generateChildrenName.js
     - name: run test suite
       run: node run
