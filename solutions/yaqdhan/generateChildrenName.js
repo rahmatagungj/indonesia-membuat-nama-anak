@@ -1,5 +1,5 @@
 function generateChildrenName(characters, name) {
-  function alphabets(text) {
+  function letters(text) {
     return text.split("").filter(x => Boolean(x.trim()));
   }
 
@@ -7,8 +7,8 @@ function generateChildrenName(characters, name) {
     return arr.filter(x => x === item);
   }
 
-  const charactersAlphabets = alphabets(characters);
-  const nameAlphabets = alphabets(name);
+  const charactersAlphabets = letters(characters);
+  const nameAlphabets = letters(name);
 
   return charactersAlphabets.every(x => itemFilter(charactersAlphabets, x).length === itemFilter(nameAlphabets, x).length)
 }
