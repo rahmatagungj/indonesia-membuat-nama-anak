@@ -10,7 +10,7 @@ function generateChildrenName(characters, name) {
   const charactersLetters = letters(characters);
   const nameLetters = letters(name);
 
-  return charactersLetters.every(x => itemFilter(charactersLetters, x).length === itemFilter(nameLetters, x).length)
+  return charactersLetters.every(x => itemFilter(charactersLetters, x).length >= itemFilter(nameLetters, x).length)
 }
 
 // dont change the code below
